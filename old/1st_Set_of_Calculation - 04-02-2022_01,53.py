@@ -7,11 +7,12 @@ import math as m
 # Base Vector Figures
 u = 19
 
+y = 0
 A = 0                                               # Angle
 G = 6.67430 * (10 ** -11)                           # universal gravitation constant
 M = 5.972 * (10 ** 24)                              # mass of the Earth
 R = 6.371 * (10 ** 6)                               # radius of the Earth
-g = 9.819973426224687                               # Gravity as altitude increses
+g = (G * M) / ((R + y) ** 2)                        # Gravity as altitude increses
 
             
 while A != 90:
@@ -43,7 +44,6 @@ while A != 90:
     # Max Height
     T = t / 2
     H = (Uy * T) - ((g / 2) * (T ** 2))
-    Y = H
     
     print('Max Height:      ', H, 'm')
 
@@ -51,7 +51,7 @@ while A != 90:
     # Creating X and Y Vectors
     x = np.linspace(0, t)
 
-    y = (Uy * x) - ((((G * M) / ((R + Y) ** 2)) / 2) * (x ** 2))
+    y = (Uy * x) - ((g / 2) * (x ** 2))
 
 
     # Creating the Plot
