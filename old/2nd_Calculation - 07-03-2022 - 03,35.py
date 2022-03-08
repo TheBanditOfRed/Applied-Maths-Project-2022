@@ -16,7 +16,7 @@ g = (G * M) / ((R + y) ** 2)                        # Gravity as Altitude Incres
 DC = 0.1                                            # Drag Coefficient
 RA = 2.83 * (10 ** -3)                              # Reference Area
 p = 1.225                                           # Mass Density of Air
-FD = (1/2) * p * (28.8036 ** 2) * DC * RA           # Drag
+FD = (1/2) * p * (u ** 2) * DC * RA                 # Drag
 a = (FD / 800)                                      # Deceleration due to Drag
 u = u - (a * 0.25)                                  # Acceleration after Drag
 
